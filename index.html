@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,200,300,400,600,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Robin Smělík</title>
+</head>
+<body>
+    <main class="min-h-screen px-4 sm:px-8 lg:px-20 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-8 xl:grid-cols-14 gap-6 items-stretch">
+            <div class="col-span-1 lg:col-span-3 flex flex-col gap-6 order-2 lg:order-1">
+
+                <!-- Profile -->
+                <div class="block flex-grow transition-all duration-300 hover:border-white/20">
+                    <div class="w-full aspect-square overflow-hidden rounded-sm relative group">
+                        <img src="images/MyProfile.jpeg" alt="Robin Smělík" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <div>
+                        <p class="font-semibold text-sm text-[#828282] mt-4">Name</p>
+                        <h1 class="font-semibold text-xl text-white">Robin Smělík</h1>
+                        <p class="font-semibold text-sm text-[#828282] mt-1">Email</p>
+                        <a href="mailto:bobosm07@seznam.cz" class="font-semibold text-normal text-white overflow-hidden hover:text-gray-300 transition-colors">bobosm07@seznam.cz</a>
+                        <p class="font-semibold text-sm text-[#828282] mt-1">Phone</p>
+                        <a href="tel:+420722433967" class="font-semibold text-normal text-white hover:text-gray-300 transition-colors">+420 722 433 967</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="block">
+                    <p class="text-sm text-[#828282] font-medium mb-2">Contact</p>
+
+                    <a href="https://instagram.com/smelda07" target="_blank" class="group relative isolate flex items-center p-1 overflow-hidden cursor-pointer rounded-xl">
+                        <div class="absolute inset-y-1 left-1 w-10 
+                                    bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] 
+                                    rounded-lg transition-all duration-700 ease-out 
+                                    group-hover:w-[calc(100%-10px)] -z-10">
+                        </div>
+
+                        <div class="relative z-10 flex items-center justify-center w-10 h-10">
+                            <img src="icons/contact_icons/instagram (2).svg" class="w-6 h-6" alt="Instagram icon">
+                        </div>
+
+                        <div class="relative z-10 ml-6">
+                            <p class="text-md text-white font-medium">smelda07</p>
+                        </div>
+                    </a>
+
+                    <a href="https://facebook.com/robin.smelik.5" target="_blank" class="group relative isolate flex items-center mt-2 p-1 overflow-hidden cursor-pointer rounded-xl">
+                        
+                        <div class="absolute inset-y-1 left-1 w-10 
+                                    bg-gradient-to-r from-[#114E90] via-[#114E90] to-[#10559F] 
+                                    rounded-lg transition-all duration-700 ease-out 
+                                    group-hover:w-[calc(100%-10px)] -z-10">
+                        </div>
+
+                        <div class="relative z-10 flex items-center justify-center w-10 h-10">
+                            <img src="icons/contact_icons/facebook (2).svg" class="w-6 h-6" alt="Facebook icon">
+                        </div>
+
+                        <div class="relative z-10 ml-6">
+                            <p class="text-md text-white font-medium">smelda07</p>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/420722433967" target="_blank" class="group relative isolate flex items-center mt-2 p-1 overflow-hidden cursor-pointer rounded-xl">
+                        
+                        <div class="absolute inset-y-1 left-1 w-10 
+                                    bg-gradient-to-r from-[#037C0B] via-[#12AD31] to-[#12AD31] 
+                                    rounded-lg transition-all duration-700 ease-out 
+                                    group-hover:w-[calc(100%-10px)] -z-10">
+                        </div>
+
+                        <div class="relative z-10 flex items-center justify-center w-10 h-10">
+                            <img src="icons/contact_icons/whatsapp (2).svg" class="w-6 h-6" alt="WhatsApp icon">
+                        </div>
+
+                        <div class="relative z-10 ml-4">
+                            <p class="text-md text-white font-medium">Robin Smělík</p>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Smelda07" target="_blank" class="group relative isolate flex items-center mt-2 p-1 overflow-hidden cursor-pointer rounded-xl">
+                        
+                        <div class="absolute inset-y-1 left-1 w-10 
+                                    bg-[#262626] 
+                                    rounded-lg transition-all duration-700 ease-out 
+                                    group-hover:w-[calc(100%-10px)] -z-10">
+                        </div>
+
+                        <div class="relative z-10 flex items-center justify-center w-10 h-10">
+                            <img src="icons/contact_icons/github (2).svg" class="w-6 h-6" alt="GitHub icon">
+                        </div>
+
+                        <div class="relative z-10 ml-4">
+                            <p class="text-md text-white font-medium">Smelda07</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contents lg:flex lg:flex-col lg:col-span-5 xl:col-span-6 gap-6 order-1 lg:order-2">
+
+                <!-- Position -->
+                <div class="block order-1 lg:order-none">
+                    <p class="text-sm text-[#828282] font-medium">Position</p>
+                    <h1 class="font-semibold text-2xl text-white">Web designer & Frontend developer</h1>
+                </div>
+
+                <!-- My skills -->
+                <div class="block flex-grow flex flex-col justify-between p-6 order-3 lg:order-none">
+                    <p class="text-sm text-[#828282] font-medium mb-2">My skills</p>
+                    <div class="flex items-center hover:bg-[#282828] duration-400 rounded-4xl p-1 cursor-pointer">
+                        <div class="skill-bg flex flex-wrap gap-4 w-12 h-12 items-center justify-center">
+                            <img src="icons/skills_icons/html (2).svg" class="w-6 h-6" alt="HTML icon">
+                        </div>
+                        <div class="flex flex-col items-left ml-4">
+                            <p class="text-md text-white font-medium">HTML</p>
+                            <p class="text-sm text-[#828282] font-regular">3 years</p>
+                        </div>
+                    </div>
+                    <hr class="border-[#707070] mt-3"/>
+
+                    <div class="flex items-center mt-4 hover:bg-[#282828] duration-400 rounded-4xl p-1 cursor-pointer">
+                        <div class="skill-bg flex flex-wrap gap-4 w-12 h-12 items-center justify-center">
+                            <img src="icons/skills_icons/css (2).svg" class="w-5 h-5" alt="CSS icon">
+                        </div>
+                        <div class="flex flex-col items-left ml-4">
+                            <p class="text-md text-white font-medium">CSS</p>
+                            <p class="text-sm text-[#828282] font-regular">3 years</p>
+                        </div>
+                    </div>
+                    <hr class="border-[#707070] mt-3"/>
+
+                    <div class="flex items-center mt-4 hover:bg-[#282828] duration-400 rounded-4xl p-1 cursor-pointer">
+                        <div class="skill-bg flex flex-wrap gap-4 w-12 h-12 items-center justify-center">
+                            <img src="icons/skills_icons/tailwind (2).svg" class="w-6 h-6" alt="Tailwind icon">
+                        </div>
+                        <div class="flex flex-col items-left ml-4">
+                            <p class="text-md text-white font-medium">Tailwind</p>
+                            <p class="text-sm text-[#828282] font-regular">4 years</p>
+                        </div>
+                    </div>
+                    <hr class="border-[#707070] mt-3"/>
+
+                    <div class="flex items-center mt-4 hover:bg-[#282828] duration-400 rounded-4xl p-1 cursor-pointer">
+                        <div class="skill-bg flex flex-wrap gap-4 w-12 h-12 items-center justify-center">
+                            <img src="icons/skills_icons/javascript (2).svg" class="w-5 h-5" alt="JavaScript icon">
+                        </div>
+                        <div class="flex flex-col items-left ml-4">
+                            <p class="text-md text-white font-medium">JavaScript</p>
+                            <p class="text-sm text-[#828282] font-regular">2 years</p>
+                        </div>
+                    </div>
+                    <hr class="border-[#707070] mt-3"/>
+
+                    <div class="flex items-center mt-4 hover:bg-[#282828] duration-400 rounded-4xl p-1 cursor-pointer">
+                        <div class="skill-bg flex flex-wrap gap-4 w-12 h-12 items-center justify-center">
+                            <img src="icons/skills_icons/react.svg" class="w-6 h-6" alt="React icon">
+                        </div>
+                        <div class="flex flex-col items-left ml-4">
+                            <p class="text-md text-white font-medium">React / React Native</p>
+                            <p class="text-sm text-[#828282] font-regular">2 years</p>
+                        </div>
+                    </div>
+                    <hr class="border-[#707070] mt-3"/>
+
+                    <div class="flex items-center mt-4 hover:bg-[#282828] duration-400 rounded-4xl p-1 cursor-pointer">
+                        <div class="skill-bg flex flex-wrap gap-4 w-12 h-12 items-center justify-center">
+                            <img src="icons/skills_icons/figma (2).svg" class="w-6 h-6" alt="Figma icon">
+                        </div>
+                        <div class="flex flex-col items-left ml-4">
+                            <p class="text-md text-white font-medium">Figma</p>
+                            <p class="text-sm text-[#828282] font-regular">4 years</p>
+                        </div>
+                    </div>
+                    <hr class="border-[#707070] mt-3"/>
+
+                    <div class="flex items-center mt-4 hover:bg-[#282828] duration-400 rounded-4xl p-1 cursor-pointer">
+                        <div class="skill-bg flex flex-wrap gap-4 w-12 h-12 items-center justify-center">
+                            <img src="icons/skills_icons/wireframing.svg" class="w-5 h-5" alt="Wireframing icon">
+                        </div>
+                        <div class="flex flex-col items-left ml-4">
+                            <p class="text-md text-white font-medium">Wireframing</p>
+                            <p class="text-sm text-[#828282] font-regular">2 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-1 lg:col-span-8 xl:col-span-5 flex flex-col gap-6 order-3 lg:order-3">
+
+                <!-- About me -->
+                <div class="block flex-grow">
+                    <p class="text-sm text-[#828282] font-medium mb-2">About me</p>
+                    <div class="block">
+                        <p class="text-md text-white font-regular">Věnuji se tvorbě moderních webových designů ve Figmě a jejich převodu do čistého, responzivního kódu pomocí HTML, CSS, Tailwind a JavaScriptu. Mám cit UI/UX, ale zároveň myslím na technickou realizaci. Hledám příležitosti, kde mohu spojit estetiku s funkčností.</p>
+                    </div>
+                </div>
+
+                <!-- Send request -->
+                <div class="block flex-grow">
+                    <p class="text-sm text-[#828282] font-medium mb-2">Send request</p>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-white text-sm font-semibold">Předmět *</label>
+                                <input 
+                                type="text" 
+                                placeholder="Eshop - web, zakázka" 
+                                class="w-full bg-[#191919]/20 backdrop-blur-md border border-white/20 rounded-lg p-2 mt-1 text-sm text-white focus:outline-none focus:border-white transition-colors placeholder:text-[#828282]"
+                                >
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-white text-sm font-semibold">Email *</label>
+                                <input 
+                                type="email" 
+                                placeholder="example@email.com" 
+                                class="w-full bg-[#191919]/20 backdrop-blur-md border border-white/20 rounded-lg hover:border p-2 mt-1 text-sm text-white focus:outline-none focus:border-white transition-colors placeholder:text-[#828282]"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                        <label class="text-white text-sm font-semibold">Text nabídky *</label>
+                            <textarea 
+                                rows="4" 
+                                placeholder="Dobrý den,&#10;potřeboval bych...." 
+                                class="w-full bg-[#191919]/20 backdrop-blur-md border border-white/20 rounded-lg p-2 mt-1 text-sm text-white focus:outline-none focus:border-white transition-colors placeholder:text-[#828282] resize-none"
+                            ></textarea>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-2">
+                            <p class="text-white/80 text-xs font-regular leading-tight max-w-[300px]">
+                                Po odeslání formuláře se vám do <br> 1–2 dnů ozvu s návrhem řešení.
+                            </p>
+                        
+                            <button 
+                                type="submit" 
+                                class="flex items-center gap-1 text-sm bg-white cursor-pointer border border-transparent hover:bg-white/65 transition-all duration-300 px-4 py-1.5 rounded-lg font-bold shadow-lg group"
+                            >
+                                <!-- Ikona: po najetí zbělá (group-hover:text-white) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <!-- Text: po najetí zbělá (group-hover:text-white) -->
+                                <span class="text-black text-md transition-colors duration-300">Odeslat žádost</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+  
+                    <div class="block hover:scale-[1.02] hover:bg-white/5 transition-all duration-200 cursor-default">
+                        <div class="flex items-end">
+                            <span class="text-2xl font-bold text-white">12</span>
+                            <span class="text-[#949494] ml-1">projects</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-2 text-white">
+                            <img src="icons/stats/Aproved.svg" alt="Aproved icon" class="w-4 h-4">
+                            <span class="text-xs font-medium bg-white bg-clip-text text-transparent tracking-wider">Completed</span>
+                        </div>
+                    </div>
+
+                    <div class="block hover:scale-[1.02] hover:bg-white/5 transition-all duration-300 cursor-default">
+                        <div class="flex items-end">
+                            <span class="text-2xl font-bold text-white">400</span>
+                            <span class="text-[#949494] ml-1">hours</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-2 text-white">
+                            <img src="icons/stats/Aproved.svg" alt="Time icon" class="w-4 h-4">
+                            <span class="text-xs font-semibold bg-white bg-clip-text text-transparent tracking-wider">Coded</span>
+                        </div>
+                    </div>
+
+                    <div class="block hover:scale-[1.02] hover:bg-white/5 transition-all duration-300 cursor-default">
+                        <div class="flex items-end">
+                            <span class="text-2xl font-bold text-white">12</span>
+                            <span class="text-[#949494] ml-1">clients</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-2 text-white">
+                            <img src="icons/stats/Like (2).svg" alt="Like icon" class="w-4 h-4">
+                            <span class="text-xs font-medium bg-white bg-clip-text text-transparent tracking-wider">Satisfied</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- My projects -->
+            <div class="block w-full col-span-1 lg:col-span-8 xl:col-span-14 order-4 lg:order-4 mt-2">
+                <p class="text-sm text-[#828282] font-medium mb-2">My projects</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                    
+                    <div onclick="openModal('web-1')" class="project-block flex flex-col p-8 h-full cursor-pointer">
+                        <div class="flex-grow flex items-center justify-center my-6">
+                            <img src="icons/projects/splitsound-project.png" alt="Splitsound" class="rounded-sm w-full h-auto max-h-20 object-contain relative z-10 hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col">
+                                <span class="text-md text-white font-semibold">Splitsound</span>
+                                <span class="text-xs text-[#FF2F00] font-semibold">Demo</span>
+                            </div>
+                            <div class="flex gap-1">
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/figma (2).svg" class="w-4 h-4" alt="Figma icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/react.svg" class="w-4 h-4" alt="React icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/javascript (2).svg" class="w-4 h-4" alt="JavaScript icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="openModal('web-2')" class="project-block flex flex-col p-8 h-full cursor-pointer">
+                        <div class="flex-grow flex items-center justify-center my-6">
+                            <img src="icons/projects/musicom-project.png" alt="Musicom" class="rounded-sm w-full h-auto max-h-20 object-contain relative z-10 hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col">
+                                <span class="text-md text-white font-semibold">Musicom</span>
+                                <span class="text-xs text-[#FF2F00] font-semibold">Demo</span>
+                            </div>
+                            <div class="flex gap-1 flex-wrap">
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/figma (2).svg" class="w-4 h-4" alt="Figma icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/tailwind (2).svg" class="w-4 h-4" alt="Tailwind icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/react.svg" class="w-5 h-5" alt="React icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/javascript (2).svg" class="w-4 h-4" alt="JavaScript icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="openModal('app-1')" class="project-block flex flex-col p-8 h-full cursor-pointer">
+                        <div class="flex-grow flex items-center justify-center my-6">
+                            <img src="icons/projects/a1-makers-project.png" alt="A1-Makers" class="rounded-sm w-full h-auto max-h-20 object-contain relative z-10 hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col">
+                                <span class="text-md text-white font-semibold">A1-Makers</span>
+                                <span class="text-xs text-[#FF2F00] font-semibold">Demo</span>
+                            </div>
+                            <div class="flex gap-1">
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/html (2).svg" class="w-4 h-4" alt="HTML icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/tailwind (2).svg" class="w-4 h-4" alt="Tailwind CSS icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/javascript (2).svg" class="w-4 h-4" alt="JavaScript icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div onclick="openModal('app-2')" class="project-block flex flex-col p-8 h-full cursor-pointer">
+                        <div class="flex-grow flex items-center justify-center my-6">
+                            <img src="icons/projects/restaurant-project.png" alt="Restaurant" class="rounded-sm w-full h-auto max-h-20 object-contain relative z-10 hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col">
+                                <span class="text-md text-white font-semibold">Restaurant</span>
+                                <span class="text-xs text-[#FF2F00] font-semibold">Demo</span>
+                            </div>
+                            <div class="flex gap-1">
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/html (2).svg" class="w-4 h-4" alt="HTML icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/tailwind (2).svg" class="w-4 h-4" alt="Tailwind icon">
+                                </div>
+                                <div class="skill-bg flex flex-wrap gap-4 w-8 h-8 items-center justify-center">
+                                    <img src="icons/skills_icons/javascript (2).svg" class="w-4 h-4" alt="JavaScript icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="projectModal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <div class="relative bg-[#171717] border border-white/10 w-full max-w-[600px] h-auto min-h-[500px] rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col">
+            
+            <div class="h-1.5 w-full bg-gradient-to-r from-[#E51700] to-[#FF6128] shrink-0"></div>
+            
+            <div class="p-8 flex flex-col h-full">
+                
+                <div class="flex justify-between items-start mb-2 shrink-0">
+                    <h2 id="modalTitle" class="text-sm uppercase tracking-widest text-[#828282] font-bold"></h2>
+                    <button onclick="closeModal()" class="text-[#828282] hover:text-white transition-colors cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="relative group flex-grow flex flex-col justify-center">
+
+                    <div class="project-block text-center">
+                        <div class="h-[220px] flex items-center justify-center mb-4 p-6">
+                            <img id="modalImg" src="" alt="Project Preview" class="w-full h-full object-contain transition-all duration-500 rounded-sm">
+                        </div>
+                        
+                        <h3 id="modalProjectName" class="text-2xl font-bold text-white mb-4"></h3>
+                        <div class="px-4 pb-4">
+                            <p id="modalDescription" class="text-[#828282] leading-relaxed text-base"></p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mt-6 pt-6 shrink-0 border-t border-white/5">
+                    <a id="modalLink" href="#" target="_blank" class="flex-1 text-center flex items-center justify-center gap-2 bg-gradient-to-r from-[#E51700] to-[#FF6128] text-white font-bold py-3 rounded-xl hover:shadow-[0_0_20px_rgba(229,23,0,0.4)] transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <button onclick="closeModal()" class="flex-1 bg-white/5 text-white font-semibold py-3 rounded-xl hover:bg-white/10 transition-colors cursor-pointer">
+                        Zavřít
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
