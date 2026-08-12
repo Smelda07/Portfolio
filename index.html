@@ -203,6 +203,34 @@
                     </div>
                 </div>
 
+                <!-- Interactive Mini-Games Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <!-- 1. Auto-Pong Game -->
+                    <div class="relative w-full h-[100px] bg-[rgba(25,25,25,0.2)] rounded-[14px] overflow-hidden border border-[#3a3a3a] group">
+                        <div class="absolute top-3 left-4 z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-[10px] uppercase tracking-widest text-white font-bold flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E51700] animate-pulse"></span>
+                                Auto-Pong
+                            </span>
+                        </div>
+                        <canvas id="pongCanvas" class="absolute inset-0 w-full h-full"></canvas>
+                    </div>
+
+                    <!-- 2. Auto-Snake Game -->
+                    <div class="w-full h-[100px] bg-[rgba(25,25,25,0.2)] rounded-[14px] overflow-hidden border border-[#3a3a3a] group flex flex-col">
+                        <div class="px-4 pt-3 pb-1 z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-[10px] uppercase tracking-widest text-white font-bold flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E51700] animate-pulse"></span>
+                                Auto-Snake
+                            </span>
+                        </div>
+                        <div class="relative flex-1 w-full">
+                            <canvas id="snakeCanvas" class="absolute inset-0 w-full h-full"></canvas>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Send request -->
                 <div class="block flex-grow">
                     <p class="text-sm text-[#828282] font-medium mb-2">Send request</p>
@@ -261,34 +289,6 @@
                             </button>
                         </div>
                     </form>
-                </div>
-
-                <!-- Interactive Mini-Games Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    
-                    <!-- 1. Auto-Pong Game -->
-                    <div class="relative w-full h-[120px] bg-[rgba(25,25,25,0.2)] rounded-[14px] overflow-hidden border border-[#3a3a3a] group">
-                        <div class="absolute top-3 left-4 z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-[10px] uppercase tracking-widest text-white font-bold flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#E51700] animate-pulse"></span>
-                                Auto-Pong
-                            </span>
-                        </div>
-                        <canvas id="pongCanvas" class="absolute inset-0 w-full h-full"></canvas>
-                    </div>
-
-                    <!-- 2. Auto-Snake Game -->
-                    <div class="w-full h-[120px] bg-[rgba(25,25,25,0.2)] rounded-[14px] overflow-hidden border border-[#3a3a3a] group flex flex-col">
-                        <div class="px-4 pt-3 pb-1 z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-[10px] uppercase tracking-widest text-white font-bold flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#E51700] animate-pulse"></span>
-                                Auto-Snake
-                            </span>
-                        </div>
-                        <div class="relative flex-1 w-full">
-                            <canvas id="snakeCanvas" class="absolute inset-0 w-full h-full"></canvas>
-                        </div>
-                    </div>
                 </div>
             </div>
 
