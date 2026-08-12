@@ -25,7 +25,7 @@ const projectsData = {
         name: 'Restaurant',
         description: 'Moderní, plně responsivní a dvoujazyčný (CZ/DE) web pro penzion a restauraci Zátiší v Rumburku. Vytvořeno pomocí HTML5, Tailwind CSS a JavaScriptu. (doplň vlastní popis).<br><br><strong>Technologie:</strong> HTML, Tailwind, JavaScript',
         image: 'icons/projects/restaurant-project.png',
-        link: 'https://github.com/Smelda07/restaurant'
+        link: 'https://github.com/Smelda07/Restaurant-Zatisi'
     }
 };
 
