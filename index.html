@@ -205,22 +205,30 @@
                 <!-- Send request -->
                 <div class="block flex-grow">
                     <p class="text-sm text-[#828282] font-medium mb-2">Send request</p>
-                    <form class="space-y-4">
+                    
+                    <form action="https://formsubmit.co/bobosm07@seznam.cz" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="Nová poptávka z webu!">
+                        <input type="hidden" name="_captcha" value="false">
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="space-y-1">
                                 <label class="text-white text-sm font-semibold">Předmět *</label>
                                 <input 
-                                type="text" 
-                                placeholder="Eshop - web, zakázka" 
-                                class="w-full bg-[#191919]/20 backdrop-blur-md border border-white/20 rounded-lg p-2 mt-1 text-sm text-white focus:outline-none focus:border-white transition-colors placeholder:text-[#828282]"
+                                    type="text" 
+                                    name="Předmět"
+                                    placeholder="Eshop - web, zakázka" 
+                                    required
+                                    class="w-full bg-[#191919]/20 backdrop-blur-md border border-white/20 rounded-lg p-2 mt-1 text-sm text-white focus:outline-none focus:border-white transition-colors placeholder:text-[#828282]"
                                 >
                             </div>
                             <div class="space-y-1">
                                 <label class="text-white text-sm font-semibold">Email *</label>
                                 <input 
-                                type="email" 
-                                placeholder="example@email.com" 
-                                class="w-full bg-[#191919]/20 backdrop-blur-md border border-white/20 rounded-lg hover:border p-2 mt-1 text-sm text-white focus:outline-none focus:border-white transition-colors placeholder:text-[#828282]"
+                                    type="email" 
+                                    name="email"
+                                    placeholder="example@email.com" 
+                                    required
+                                    class="w-full bg-[#191919]/20 backdrop-blur-md border border-white/20 rounded-lg hover:border p-2 mt-1 text-sm text-white focus:outline-none focus:border-white transition-colors placeholder:text-[#828282]"
                                 >
                             </div>
                         </div>
@@ -228,8 +236,10 @@
                         <div class="space-y-1">
                         <label class="text-white text-sm font-semibold">Text nabídky *</label>
                             <textarea 
+                                name="Zpráva"
                                 rows="4" 
                                 placeholder="Dobrý den,&#10;potřeboval bych...." 
+                                required
                                 class="w-full bg-[#191919]/20 backdrop-blur-md border border-white/20 rounded-lg p-2 mt-1 text-sm text-white focus:outline-none focus:border-white transition-colors placeholder:text-[#828282] resize-none"
                             ></textarea>
                         </div>
@@ -243,53 +253,41 @@
                                 type="submit" 
                                 class="flex items-center gap-1 text-sm bg-white cursor-pointer border border-transparent hover:bg-white/65 transition-all duration-300 px-4 py-1.5 rounded-lg font-bold shadow-lg group"
                             >
-                                <!-- Ikona: po najetí zbělá (group-hover:text-white) -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                <!-- Text: po najetí zbělá (group-hover:text-white) -->
                                 <span class="text-black text-md transition-colors duration-300">Odeslat žádost</span>
                             </button>
                         </div>
                     </form>
                 </div>
 
-                <!-- Stats -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-  
-                    <div class="block hover:scale-[1.02] hover:bg-white/5 transition-all duration-200 cursor-default">
-                        <div class="flex items-end">
-                            <span class="text-2xl font-bold text-white">12</span>
-                            <span class="text-[#949494] ml-1">projects</span>
+                <!-- Interactive Mini-Games Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <!-- 1. Auto-Pong Game -->
+                    <div class="relative w-full h-[120px] bg-[rgba(25,25,25,0.2)] rounded-[14px] overflow-hidden border border-[#3a3a3a] group">
+                        <div class="absolute top-3 left-4 z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-[10px] uppercase tracking-widest text-white font-bold flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E51700] animate-pulse"></span>
+                                Auto-Pong
+                            </span>
                         </div>
-                        <div class="flex items-center gap-2 mt-2 text-white">
-                            <img src="icons/stats/Aproved.svg" alt="Aproved icon" class="w-4 h-4">
-                            <span class="text-xs font-medium bg-white bg-clip-text text-transparent tracking-wider">Completed</span>
-                        </div>
+                        <canvas id="pongCanvas" class="absolute inset-0 w-full h-full"></canvas>
                     </div>
 
-                    <div class="block hover:scale-[1.02] hover:bg-white/5 transition-all duration-300 cursor-default">
-                        <div class="flex items-end">
-                            <span class="text-2xl font-bold text-white">400</span>
-                            <span class="text-[#949494] ml-1">hours</span>
+                    <!-- 2. Auto-Snake Game -->
+                    <div class="w-full h-[120px] bg-[rgba(25,25,25,0.2)] rounded-[14px] overflow-hidden border border-[#3a3a3a] group flex flex-col">
+                        <div class="px-4 pt-3 pb-1 z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-[10px] uppercase tracking-widest text-white font-bold flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#E51700] animate-pulse"></span>
+                                Auto-Snake
+                            </span>
                         </div>
-                        <div class="flex items-center gap-2 mt-2 text-white">
-                            <img src="icons/stats/Aproved.svg" alt="Time icon" class="w-4 h-4">
-                            <span class="text-xs font-semibold bg-white bg-clip-text text-transparent tracking-wider">Coded</span>
-                        </div>
-                    </div>
-
-                    <div class="block hover:scale-[1.02] hover:bg-white/5 transition-all duration-300 cursor-default">
-                        <div class="flex items-end">
-                            <span class="text-2xl font-bold text-white">12</span>
-                            <span class="text-[#949494] ml-1">clients</span>
-                        </div>
-                        <div class="flex items-center gap-2 mt-2 text-white">
-                            <img src="icons/stats/Like (2).svg" alt="Like icon" class="w-4 h-4">
-                            <span class="text-xs font-medium bg-white bg-clip-text text-transparent tracking-wider">Satisfied</span>
+                        <div class="relative flex-1 w-full">
+                            <canvas id="snakeCanvas" class="absolute inset-0 w-full h-full"></canvas>
                         </div>
                     </div>
-
                 </div>
             </div>
 

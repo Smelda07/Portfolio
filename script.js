@@ -60,3 +60,223 @@ function closeModal() {
         modalWindow.classList.add('scale-95');
     }
 }
+
+
+// --- AUTO-PONG ANIMACE ---
+function initPong() {
+    const canvas = document.getElementById('pongCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+
+    // Funkce pro responzivní velikost canvasu
+    function resize() {
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Nastavení hry
+    const ball = { 
+        x: canvas.width / 2, 
+        y: canvas.height / 2, 
+        vx: 2.5,
+        vy: 2,
+        radius: 4 
+    };
+    
+    const paddle = { w: 4, h: 30, speed: 2.2 };
+    let leftY = canvas.height / 2 - paddle.h / 2;
+    let rightY = canvas.height / 2 - paddle.h / 2;
+
+    function update() {
+        ball.x += ball.vx;
+        ball.y += ball.vy;
+
+        if (ball.y <= ball.radius || ball.y >= canvas.height - ball.radius) {
+            ball.vy *= -1;
+        }
+
+        if (leftY + paddle.h / 2 < ball.y - 5) leftY += paddle.speed;
+        if (leftY + paddle.h / 2 > ball.y + 5) leftY -= paddle.speed;
+
+        if (rightY + paddle.h / 2 < ball.y - 5) rightY += paddle.speed;
+        if (rightY + paddle.h / 2 > ball.y + 5) rightY -= paddle.speed;
+
+        leftY = Math.max(0, Math.min(canvas.height - paddle.h, leftY));
+        rightY = Math.max(0, Math.min(canvas.height - paddle.h, rightY));
+
+        if (ball.x - ball.radius <= paddle.w && ball.y >= leftY && ball.y <= leftY + paddle.h) {
+            ball.vx = Math.abs(ball.vx);
+        }
+
+        if (ball.x + ball.radius >= canvas.width - paddle.w && ball.y >= rightY && ball.y <= rightY + paddle.h) {
+            ball.vx = -Math.abs(ball.vx);
+        }
+
+        if (ball.x < -10 || ball.x > canvas.width + 10) {
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Vykreslení středové čáry
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]);
+        ctx.moveTo(canvas.width / 2, 0);
+        ctx.lineTo(canvas.width / 2, canvas.height);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Vykreslení pálek
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, leftY, paddle.w, paddle.h);
+        ctx.fillRect(canvas.width - paddle.w, rightY, paddle.w, paddle.h);
+
+        // Vykreslení míčku
+        ctx.beginPath();
+        ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#E51700'; 
+        ctx.fill();
+    }
+
+    function loop() {
+        update();
+        draw();
+        requestAnimationFrame(loop);
+    }
+    
+    loop();
+}
+
+document.addEventListener('DOMContentLoaded', initPong);
+
+
+// --- AUTO-SNAKE ANIMACE ---
+function initSnake() {
+    const canvas = document.getElementById('snakeCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    
+    function resize() {
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const gridSize = 8; // Velikost jedné kostičky hada
+    let snake = [{x: 5, y: 5}]; // Startovní pozice
+    let food = {x: 10, y: 10};
+    let dx = 1; // Směr X
+    let dy = 0; // Směr Y
+    let lastTime = 0;
+    const speed = 70; // Rychlost hada v milisekundách (nižší = rychlejší)
+
+    function placeFood() {
+        const cols = Math.floor(canvas.width / gridSize);
+        const rows = Math.floor(canvas.height / gridSize);
+        food = {
+            x: Math.floor(Math.random() * (cols - 2)) + 1,
+            y: Math.floor(Math.random() * (rows - 2)) + 1
+        };
+    }
+    placeFood();
+
+    function update() {
+        let head = {x: snake[0].x, y: snake[0].y};
+        
+        // Jednoduchá AI: Had se snaží najít cestu k jídlu
+        let nextDx = dx;
+        let nextDy = dy;
+        
+        if (head.x !== food.x) {
+            let wantDx = food.x > head.x ? 1 : -1;
+            // Ochrana: nemůže se otočit o 180 stupňů do vlastního těla
+            if (dx !== -wantDx) { 
+                nextDx = wantDx; nextDy = 0;
+            } else {
+                nextDx = 0; nextDy = 1; // vyhne se do strany
+            }
+        } else if (head.y !== food.y) {
+            let wantDy = food.y > head.y ? 1 : -1;
+            if (dy !== -wantDy) {
+                nextDx = 0; nextDy = wantDy;
+            } else {
+                nextDx = 1; nextDy = 0; // vyhne se do strany
+            }
+        }
+        
+        dx = nextDx;
+        dy = nextDy;
+        head.x += dx;
+        head.y += dy;
+        
+        // Detekce nárazu do stěny nebo do sebe -> Reset hry
+        const cols = Math.floor(canvas.width / gridSize);
+        const rows = Math.floor(canvas.height / gridSize);
+        
+        let crashed = false;
+        if (head.x < 0 || head.x >= cols || head.y < 0 || head.y >= rows) crashed = true;
+        for (let i = 0; i < snake.length; i++) {
+            if (head.x === snake[i].x && head.y === snake[i].y) crashed = true;
+        }
+
+        if (crashed) {
+            snake = [{x: Math.floor(cols/2), y: Math.floor(rows/2)}];
+            dx = 1; dy = 0;
+            placeFood();
+            return; // Konec tohoto kroku
+        }
+
+        // Posun hada dopředu
+        snake.unshift(head);
+        
+        // Jídlo
+        if (head.x === food.x && head.y === food.y) {
+            placeFood(); // Vygeneruje nové jídlo (a nezkrátí ocas, takže vyroste)
+        } else {
+            snake.pop(); // Pokud nejedl, zkrátíme ocas (pohyb)
+        }
+    }
+
+    function draw() {
+        // ZMĚNA: Vyčištění plátna na ZCELA TRANSPARENTNÍ
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Nakreslení jídla (tvoje oranžovo/červená značková barva)
+        ctx.fillStyle = '#E51700';
+        ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 1, gridSize - 1);
+        
+        // Nakreslení hada (bílý s jemnými mezerami)
+        for (let i = 0; i < snake.length; i++) {
+            // Hlava je lehce průhledná/odlišná pro lepší efekt
+            ctx.fillStyle = i === 0 ? '#ffffff' : 'rgba(255, 255, 255, 0.7)';
+            ctx.fillRect(snake[i].x * gridSize, snake[i].y * gridSize, gridSize - 1, gridSize - 1);
+        }
+    }
+
+    // Herní smyčka pro Hada s časovačem
+    function loop(time) {
+        requestAnimationFrame(loop);
+        if (time - lastTime > speed) {
+            update();
+            draw();
+            lastTime = time;
+        }
+    }
+    
+    requestAnimationFrame(loop);
+}
+
+// Společný spouštěč pro obě hry při načtení stránky
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initPong === 'function') initPong();
+    initSnake();
+});
